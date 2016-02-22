@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <title>WebApp</title>
         <script src="lib/angular/js/angular.min.js"></script>
+        <script src="lib/angular/js/angular-route.min.js"></script>
+        <script src="lib/angular/js/app.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script src="lib/angular/js/Controller.js"> </script>
         <link rel="stylesheet" type="text/css" href="lib/angular/css/style.css">
@@ -14,46 +16,8 @@
     </aside>
 
     <main>
-        <div class="content" ng-controller="MyController">
-            <div class="search">
-                <h1> Movie Directory</h1>
-                <label> Search : </label>
-                <input type="text" ng-model = "query" placeholder="Search for movie" autofocus >
+        <div class="content" ng-view="listControllers">
 
-                <label class="formgroup"> Order by:
-
-                <select ng-model="orderByTitleOrYear">
-                    <option value ="Title" selected>Title</option>
-                    <option value="Year">Year</option>
-                </select></label>
-                <label class="formgroup"> Ascending :
-                    <input type="radio" ng-model="direction" name="direction" checked>
-                </label>
-                <label class="formgroup"> Descending :
-                    <input type="radio" ng-model="direction" name="direction" value="reverse">
-                </label>
-
-
-
-            </div>
-                <ul class ="movielist">
-                    <li class = "movie cf" ng-repeat="mov in movies| filter:query |limitTo:100 | orderBy:orderByTitleOrYear:direction">
-                        <img ng-src = "{{mov.Poster}}" alt = "Missing">
-                        <h2>{{mov.Title}}</h2>
-                        <p class="info"> {{mov.Plot}}</p>
-                        <p>Written by {{mov.Writer}}</p>
-                        <p>Rating: {{mov.Rated}}</p>
-                        <p>Actors: {{mov.Actors}}</p>
-                        <p>Directed by: {{mov.Director}}</p>
-                        <p>Language: {{mov.Language}}</p>
-                        <p>Released:  {{mov.Released}}</p>
-                        <p>Year: {{mov.year}}</p>
-                        <p>Genre: {{mov.Genre}}</p>
-                        <p>Awards: {{mov.Awards}}</p>
-                        <p>Runtime: {{mov.Runtime}}</p>
-                    </li>
-
-                </ul>
         </div>
     </main>
 

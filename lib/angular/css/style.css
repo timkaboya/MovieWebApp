@@ -335,7 +335,7 @@ main.content {
 .movie img {
   display: block;
   float: left;
-  width: 160px;
+  width: 100px;
   -webkit-border-radius: 12px;
   border-radius: 12px;
   margin-right: 10px;

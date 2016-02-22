@@ -1,0 +1,23 @@
+<section class ="movieinfo">
+    <div class=" movie cf" ng-model = "movies">
+
+        <!--<h1>{{movies[whichMovie]}}.Title}}]</h1> !-->
+        <div class="info">
+            <img ng-src="{{movies[whichMovie].Poster}}" >
+            <h1>{{movies[whichMovie].Title}}</h1>
+            <p>{{movies[whichMovie].Plot}}</p>
+            <p>Written by {{movies[whichMovie].Writer}}</p>
+            <p>Rating: {{movies[whichMovie].Rated}}</p>
+            <p>Actors: {{movies[whichMovie].Actors}}</p>
+            <p>Directed by: {{movies[whichMovie].Director}}</p>
+            <p>Language: {{movies[whichMovie].Language}}</p>
+            <p>Released:  {{movies[whichMovie].Released}}</p>
+            <p>Year: {{movies[whichMovie].Year}}</p>
+            <p>Genre: {{movies[whichMovie].Genre}}</p>
+            <p>Awards: {{movies[whichMovie].Awards}}</p>
+            <p>Runtime: {{movies[whichMovie].Runtime}}</p>
+        </div>
+
+    </div>
+    <a href="#movie">&laquo; Go Back</a>
+</section>

@@ -1,0 +1,35 @@
+
+<section class="moviepage">
+    <div class="search">
+        <h1> Movie Directory</h1>
+        <label> Search : </label>
+        <input type="text" ng-model = "query" placeholder="Search for movie" autofocus >
+
+        <label class="formgroup"> Order by:
+
+            <select ng-model="orderByTitleOrYear">
+                <option value ="Title" selected>Title</option>
+                <option value="Year">Year</option>
+            </select></label>
+        <label class="formgroup"> Ascending :
+            <input type="radio" ng-model="direction" name="direction" checked>
+        </label>
+        <label class="formgroup"> Descending :
+            <input type="radio" ng-model="direction" name="direction" value="reverse">
+        </label>
+
+
+
+    </div>
+    <ul class ="movielist">
+        <li class = "movie cf" ng-repeat="mov in movies| filter:query |limitTo:100 | orderBy:orderByTitleOrYear:direction">
+           <a href="#details/{{movies.indexOf(mov)}}">
+            <img ng-src = "{{mov.Poster}}" alt = "Missing">
+            <h2>{{mov.Title}}</h2>
+            <p class="info"> {{mov.Plot}}</p>
+
+           </a>
+        </li>
+
+    </ul>
+</section>
